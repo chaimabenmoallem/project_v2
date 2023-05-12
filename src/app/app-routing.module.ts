@@ -1,8 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
-
+const routes: Routes = [
+ { path:'' , redirectTo:'login' , pathMatch:'full'},
+ { path: 'login', loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule) },
+ { path: 'register', loadChildren: () => import('./pages/register/register.module').then(m => m.RegisterModule)},
+ { path: 'dashboard', loadChildren: () => import('./pages/dashboard/dashboard.module').then(m => m.DashboardModule) },
+ { path: 'users', loadChildren: () => import('./pages/users/users.module').then(m => m.UsersModule) },
+ { path:'**' , loadChildren: () => import('./pages/notfound/notfound.module').then(m => m.NotfoundModule) }
+]
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
