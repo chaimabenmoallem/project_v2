@@ -1,0 +1,12 @@
+.container{
+    background-color: #fff;
+    border-radius: 10px ;
+}
+h1{
+    padding-top: 20px;
+    color: green;
+    font-weight: bold;
+}
+button{
+    color: rgb(68, 210, 68);
+}

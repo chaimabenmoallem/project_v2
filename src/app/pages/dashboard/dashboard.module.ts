@@ -5,7 +5,8 @@ import { DashboardComponent } from './dashboard.component';
 import { LineComponent } from 'src/app/components/line/line.component';
 import { BarComponent } from 'src/app/components/bar/bar.component';
 import { DoughnutsComponent } from 'src/app/components/doughnuts/doughnuts.component';
-import { NavbarComponent } from 'src/app/components/navbar/navbar.component';
+import { NavbarComponentModule } from 'src/app/components/navbar/navbar.module';
+
 
 
 @NgModule({
@@ -14,11 +15,12 @@ import { NavbarComponent } from 'src/app/components/navbar/navbar.component';
     LineComponent,
     BarComponent,
     DoughnutsComponent,
-    NavbarComponent
+    
   ],
   imports: [
     CommonModule,
-    DashboardRoutingModule
+    DashboardRoutingModule,
+    NavbarComponentModule
   ]
 })
 export class DashboardModule { }

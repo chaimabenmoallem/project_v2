@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { UsersRoutingModule } from './users-routing.module';
 import { UsersComponent } from './users.component';
 import { ListComponent } from 'src/app/components/list/list.component';
+import { NavbarComponentModule } from 'src/app/components/navbar/navbar.module';
 
 
 
@@ -20,6 +21,7 @@ import { ListComponent } from 'src/app/components/list/list.component';
   imports: [
     CommonModule,
     UsersRoutingModule,
+    NavbarComponentModule
   ]
 })
 export class UsersModule { }
