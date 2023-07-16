@@ -1,0 +1,21 @@
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+} 
+
+.container-fluid{
+    position: relative;
+    padding-top: 0%;
+    margin-top: 0px;
+}
+.h-custom {
+    height: calc(100% - 73px);
+    }
+    @media (max-width: 450px) {
+    .h-custom {
+    height: 100%;
+    }
+    }
