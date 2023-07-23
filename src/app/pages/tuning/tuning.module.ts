@@ -12,6 +12,17 @@ import { MatDialogModule } from '@angular/material/dialog'
 import { PopupComponent } from 'src/app/components/popup/popup.component';
 import { MatTableModule } from '@angular/material/table';
 
+
+@NgModule({
+  imports: [
+    // other imports
+   
+  ],
+  // other module declarations
+})
+export class TunModule { }
+
+
 @NgModule({
   declarations: [
     TuningComponent,

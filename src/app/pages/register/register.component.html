@@ -47,13 +47,14 @@
 
                     <!-- Password input -->
                     <div class="form-outline mb-3">
-                        <input type="password" name="password" id="password" class="form-control form-control-lg"
+                        <input [type]="changetype ?'password':'text'" name="password" id="password" class="form-control form-control-lg"
                             placeholder="Enter password" [(ngModel)]="registerObj.password" ngModel name="password" #password="ngModel"
-                            required minlength="3" maxlength="10" />
+                            required minlength="8" />
+                            <span class="eyeicon" (click)="viewpass()"><i [ngClass]="visible? 'fa fa-eye' : 'fa fa-eye-slash'"></i></span>
                           <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
                             <div *ngIf="password.errors?.['required']">password required</div>
-                            <div *ngIf="password.errors?.['minlength']">minimum 3 characters</div>
-                            <div *ngIf="password.errors?.['maxlength']">maximum 10 characters</div>
+                            <div *ngIf="password.errors?.['minlength']">minimum 8 characters</div>
+                          
                             
                           </div>
                         <label class="form-label" for="password">Password</label>
@@ -61,11 +62,12 @@
                     
                      <!-- Confirm Password input -->
                      <div class="form-outline mb-3">
-                        <input type="password" name="confirmPassword" id="confirmPassword" class="form-control form-control-lg"
+                        <input [type]="changetype ?'password':'text'"  name="confirmPassword" id="confirmPassword" class="form-control form-control-lg"
                             placeholder="Confirm password" [(ngModel)]="registerObj.confirmPassword"
                             ngModel name="confirmPassword" #confirmPassword="ngModel"
-                            required
-                             />
+                            required/>
+                            <span class="eyeicon" (click)="viewconfpass()"><i [ngClass]="confvisible? 'fa fa-eye' : 'fa fa-eye-slash'"></i></span>
+
                              <div class="alert alert-danger" *ngIf="confirmPassword.touched && !confirmPassword.valid">
                                 <div *ngIf="confirmPassword.errors?.['required']">Confirm Password required</div>
                             </div>

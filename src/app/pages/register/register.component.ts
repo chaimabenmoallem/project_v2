@@ -22,6 +22,18 @@ export class RegisterComponent implements OnInit{
     
   }
   
+  visible:boolean = true;
+  changetype:boolean=true;
+  viewpass(){
+    this.visible=!this.visible;
+    this.changetype=!this.changetype;
+  }
+
+  confvisible:boolean = true;
+  viewconfpass(){
+    this.confvisible=!this.confvisible;
+    this.changetype=!this.changetype;
+  }
 
   goToLogin(){
     

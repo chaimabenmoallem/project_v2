@@ -13,8 +13,8 @@ export class TuningService {
     return this.http.delete<any>(`${this.baseUrl}/tuning/${id}`);
   }
 
-  getTuningData(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.baseUrl}/tuning`);
+  getTuningData(): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/tuning`);
   }
 
  /* deleteData(id: String): Observable<any> {

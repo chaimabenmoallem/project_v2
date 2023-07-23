@@ -21,6 +21,16 @@ export class LoginComponent implements OnInit{
   //Router is a service that provide navigation
   constructor(private router : Router , private loginServices : LoginService){}
 
+
+  visible:boolean = true;
+  changetype:boolean=true;
+  viewpass(){
+    this.visible=!this.visible;
+    this.changetype=!this.changetype;
+  }
+
+
+
   goToRegister(){
     
     this.router.navigate(["/register"])

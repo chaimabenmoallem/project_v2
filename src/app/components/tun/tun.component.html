@@ -76,8 +76,12 @@
                 </thead>
                 <tbody>
                     <tr class="bg-blue" *ngFor="let item of tuningData">
+                        <!-- <td class="pt-2">
+                            <div class="pl-lg-5 pl-md-3 pl-1 name">{{ isSingleWord ? removeWhitespaces(item.terms) : item.terms }}</div>
+                          </td> -->
+                        
                         <td class="pt-2"> 
-                            <div class="pl-lg-5 pl-md-3 pl-1 name">{{item.terms}}</div>
+                            <div class="pl-lg-5 pl-md-3 pl-1 name">{{ transformWord(item.terms) }}</div>
                         </td>
                         <td class="pt-3 mt-1">{{item.occurrences}}</td>
                         <td>

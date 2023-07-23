@@ -5,6 +5,15 @@ flex: 1;
 height: 1px;
 background: #eee;
 }
+
+.eyeicon{
+    position: relative;
+    left: 90%; 
+    bottom: 35px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
 .h-custom {
 height: calc(100% - 73px);
 }

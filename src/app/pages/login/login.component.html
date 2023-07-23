@@ -41,13 +41,16 @@
             <!-- Password input -->
             <div class="form-outline mb-3">
   
-              <input type="password" name="password" id="password" class="form-control form-control-lg"
+              <input [type]="changetype ?'password':'text'" name="password" id="password" class="form-control form-control-lg"
                 placeholder="Enter password" [(ngModel)]="loginObj.password" ngModel name="password" #password="ngModel"
-                required minlength="3" maxlength="10" />
+                required minlength="8" />
+                <span class="eyeicon" (click)="viewpass()"><i [ngClass]="visible? 'fa fa-eye' : 'fa fa-eye-slash'"></i></span>
+                
+
               <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
-                <div *ngIf="password.errors?.['requirnled']">password required</div>
-                <div *ngIf="password.errors?.['miength']">minimum 3 characters</div>
-                <div *ngIf="password.errors?.['maxlength']">maximum 10 characters</div>
+                <div *ngIf="password.errors?.['required']">password required</div>
+                <!-- <div *ngIf="password.errors?.['miength']">minimum 8 characters</div>
+                <div *ngIf="password.errors?.['maxlength']">maximum 15 characters</div> -->
                 
               </div>
               <label class="form-label" for="password">Password</label>
