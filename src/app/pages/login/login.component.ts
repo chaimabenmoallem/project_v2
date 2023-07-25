@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthenService } from 'src/app/services/authen.service';
 import { LoginService } from 'src/app/services/login.service';
 @Component({
   selector: 'app-login',
@@ -19,11 +20,14 @@ export class LoginComponent implements OnInit{
     
   }
   //Router is a service that provide navigation
-  constructor(private router : Router , private loginServices : LoginService){}
+  constructor(private router : Router , 
+              private loginServices : LoginService,
+              private authService: AuthenService){}
 
 
   visible:boolean = true;
   changetype:boolean=true;
+  
   viewpass(){
     this.visible=!this.visible;
     this.changetype=!this.changetype;
@@ -31,12 +35,16 @@ export class LoginComponent implements OnInit{
 
 
 
+
+
   goToRegister(){
     
     this.router.navigate(["/register"])
   }
-  goToDashboard(){
-    localStorage.setItem('token', Math.random().toString());
+  goToDashboard(email : any){
+    localStorage.setItem("email",email);
+    this.router.navigate([""]);
+    
     this.loginServices.addUser(this.loginObj).subscribe({
       next: (response: any) => {
         console.log(response); // Authentication successful

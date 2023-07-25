@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/services/auth.service';
+import { AuthenService } from 'src/app/services/authen.service';
 import { TuningService } from 'src/app/services/tuning.service';
 import { UserServiceService } from 'src/app/services/user-service.service';
 
@@ -11,7 +11,7 @@ import { UserServiceService } from 'src/app/services/user-service.service';
 })
 export class NavbarComponent  {
   constructor(private router : Router,
-              private authService : AuthService, 
+              private authService : AuthenService, 
               ){
 
 
@@ -19,10 +19,10 @@ export class NavbarComponent  {
  
 
   logout(){
-    this.authService.logout();
-    const confirmation = confirm('Do you want to logout');
-    if(confirmation){
+    // this.authService.logout();
+    // const confirmation = confirm('Do you want to logout');
+    // if(confirmation){
     this.router.navigate(['/login'])
   }
   }
-}
+//}
