@@ -1,0 +1,22 @@
+/* body {
+    background-color: #d9ecf2;
+    font-family: 'Poppins', sans-serif;
+    color: #666
+} */
+.inline{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    /* background-color: #EBF5FB; */
+}
+ /* .container{
+
+    margin-left: 0;
+    margin-right: 0;
+    padding: 100px;
+    
+}  */
+.tuning{
+    background-color: white;
+    
+}

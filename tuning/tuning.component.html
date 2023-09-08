@@ -1,0 +1,35 @@
+<!-- <div class="container">
+    <app-navbar></app-navbar>
+   
+    <div class="tuning">
+       
+    <div class="inline">
+        <app-slider (showTableEvent)="displayTotalOccurrences()"></app-slider> 
+        <app-btn-on-off></app-btn-on-off>
+
+    </div>
+    <app-tun [showInitialTable]="showInitialTable" [showTotalOccurrences]="showTotalOccurrences" [totalOccurrences]="totalOccurrences"></app-tun>
+</div>
+</div> -->
+
+<div class="container">
+    <app-navbar></app-navbar>
+    <div class="tuning">
+        <div class="inline">
+            <!-- Listen to the event from the slider -->
+            <app-slider (fuzzinessChanged)="onFuzzinessChanged($event)"></app-slider> 
+            <app-btn-on-off (toggleChanged)="handleToggleChange($event)"></app-btn-on-off>
+            <!-- <app-btn-on-off (whitespaceToggled)="handleWhitespaceToggle($event)"></app-btn-on-off> -->
+        </div>
+
+
+
+        <!-- Pass the filtered terms to the table -->
+        <app-tun [displayedTerms]="displayedTerms" [showInitialTable]="showInitialTable"></app-tun>
+        <!-- <app-tun [termsWithSpaces]="termsWithSpaces" [termsWithoutSpaces]="termsWithoutSpaces" [relatedTermsMap]="relatedTermsMap" [displayedTerms]="displayedTerms" [showInitialTable]="showInitialTable"></app-tun> -->
+    </div>
+</div>
+
+   
+
+
