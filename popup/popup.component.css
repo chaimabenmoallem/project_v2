@@ -1,0 +1,62 @@
+.container{
+    background-color: #fff;
+    border-radius: 10px ;
+}
+h1{
+    padding-top: 20px;
+    color: rgba(240, 152, 75, 0.943);
+    font-weight: bold;
+}
+
+.btn{
+    margin-left: 40px;
+}
+
+::ng-deep .mat-mdc-raised-button.mat-unthemed {
+    --mdc-protected-button-container-color: #fcfcfc;
+    --mdc-protected-button-label-text-color: rgb(244, 109, 13);
+}
+
+.flex-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 30px;
+    width: 330px;
+    height: 80px;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background-color:rgb(244, 143, 71);
+}
+
+::ng-deep .mdc-text-field .mdc-text-field__input {
+    caret-color: rgb(244, 143, 71);
+}
+
+::ng-deep .mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input {
+    color: rgba(255, 255, 255, 0.87);
+}
+
+::ng-deep .mdc-text-field--filled .mdc-line-ripple::after {
+    border-bottom-color: var(--mdc-theme-primary, #ffffff);
+}
+
+.custom-width {
+    width: 130px;
+}
+
+::ng-deep .mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input {
+    color: rgba(255, 255, 255, 0.87);
+}
+
+::ng-deep .mat-mdc-form-field-type-mat-native-select.mat-focused.mat-primary .mat-mdc-form-field-infix::after {
+    color: rgb(244, 143, 71);
+}
+
+::ng-deep .mat-mdc-form-field-type-mat-native-select .mat-mdc-form-field-input-control {
+     padding-right: 0px; 
+}
+
+

@@ -1,0 +1,107 @@
+<!-- 
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+            <div class="panel">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col col-sm-3 col-xs-12">
+                            <h4 class="title">Data <span>List</span></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Terms</th>
+                                <th>Ocuurences</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>vw</td>
+                                <td>100</td>
+                                <td>
+                                    <ul class="action-list">
+                                        
+                                        <li><button href="#" data-tip="delete" (click)="clickMethod('name')"><i class="fa fa-trash"></i></button></li>
+                                        <li><button href="#" data-tip="detail" (click)="openDialog()"><i class="fa fa-info-circle"></i></button></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>RangeRover</td>
+                                <td>22</td>
+                                <td>
+                                    <ul class="action-list">
+                                        <li><button href="#" data-tip="delete"><i class="fa fa-trash"></i></button></li>
+                                        <li><button href="#" data-tip="detail" (click)="openDialog()"><i class="fa fa-info-circle"></i></button></li>
+                                        
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Range Rover</td>
+                                <td>200</td>
+                                <td>
+                                    <ul class="action-list">
+                                        <li><button href="#" data-tip="delete"><i class="fa fa-trash"></i></button></li>
+                                        <li><button href="#" data-tip="detail" (click)="openDialog()"><i class="fa fa-info-circle"></i></button></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+    <div class="container rounded mt-5 bg-white p-md-5">
+        <div class="h2 font-weight-bold">Data List</div>
+        <div class="table-responsive">
+            <table table class="table" *ngIf="displayedTerms.length > 0; else noDataTemplate">
+                <thead>
+                    <tr>
+                        <th scope="col">Terms</th>
+                        <th scope="col">Occurrences</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="bg-blue" *ngFor="let item of displayedTerms">
+                        <td class="pt-2">
+                            <div class="pl-lg-5 pl-md-3 pl-1 name" [class.has-space]="item.term?.includes(' ')">{{ item.term }}</div>
+
+                        </td>
+                        <td class="pt-3 mt-1">{{item.occurrences}}</td>
+                        <td>
+                            <ul class="action-list">
+                                <li><button href="#" data-tip="delete" (click)="clickDelete(item)"><i class="fa fa-trash"></i></button></li>
+                                <li><button href="#" data-tip="detail" (click)="openDialog(item)">
+                                    <i class="fa fa-info-circle"></i>
+                                </button></li>
+                            </ul>
+                        </td>
+                     
+                     
+                    </tr>
+                  
+
+                </tbody>
+            </table>
+
+            <ng-template #noDataTemplate>
+                <h4>No terms match the selected criteria</h4>
+            </ng-template>
+        </div>
+        
+    </div>
+    
+
+

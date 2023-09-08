@@ -1,0 +1,50 @@
+<div class="container">
+<header>
+    <h1>More details</h1>
+</header>
+
+<!-- 
+<button type="button"  data-toggle="popover" title="Popover title" data-content="the synonym is">Click to toggle popover</button>
+<mat-dialog-actions align="end">
+    <button mat-raised-button >Confirm</button>  
+</mat-dialog-actions>
+</div> -->
+
+  <div *ngIf="data; else noDataTemplate">
+    <h5>Related Terms:</h5>
+    <ul>
+      <li *ngFor="let term of data.relatedTerms">
+        <input type="checkbox" [(ngModel)]="term.checked" (change)="logTerm(term)">
+        <label [for]="term.term">{{ term.term }} </label>
+        
+        
+      </li>
+    </ul>
+</div>
+  
+<div class="flex-container">
+  <mat-form-field>
+    <select class="custom-width" matNativeControl required (change)="onFirstDropdownChange($event)">
+      <option class="option" value="Energy">Energy</option>
+      <option value="make">Make</option>
+      <option value="model">Model</option>
+      <option value="transmission_type">Transmission_type</option>
+      <option value="body_type">Body_type</option>
+    </select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <select class="custom-width" matNativeControl required (change)="onSecondDropdownChange($event)">
+      <option *ngFor="let option of secondDropdownOptions" [value]="option">{{option}}</option>
+    </select>
+    
+  </mat-form-field>
+
+</div>
+
+<ng-template #noDataTemplate>
+  <h4>No data available</h4>
+</ng-template>
+<mat-dialog-actions align="end">
+  <button class="btn" mat-raised-button (click)="onConfirm()" >Confirm</button>  
+</mat-dialog-actions>

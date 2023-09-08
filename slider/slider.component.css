@@ -1,0 +1,40 @@
+mat-slider{
+ width: 150px;
+ background-color: white;
+}
+/* .my-component {
+    width: 300px;
+    height: 200px;
+    font-size: 18px;
+    
+  }
+ body {
+    background-color: #d9ecf2;
+    font-family: 'Poppins', sans-serif;
+    color: #666
+} */
+.slidecontainer{ 
+    width: 300px; 
+     height: auto;
+     
+    /* display: flex;  */
+     /* margin-top: 70px;
+    margin-right: 900px;  */
+     /* justify-content: flex-start; */
+    /* align-items: center;
+    align-content: space-between; */
+    /* flex-wrap: wrap; */
+    margin-top: 120px;
+    margin-left: 80px;
+    float: right;
+    background-color: white; 
+   
+} 
+
+h4{
+    margin-top: 1px;
+    margin-left: 150px;
+
+}
+
+

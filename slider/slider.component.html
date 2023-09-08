@@ -1,0 +1,20 @@
+<!-- <div class="container">
+    <form [formGroup]="form">
+        <mat-slider formControlName="sliderName"
+            min="0" 
+            max="5" 
+            step="1">
+        </mat-slider>
+    </form>
+    <h4>Fuzziness: {{ form.get('sliderName')?.value }}</h4>
+    <button (click)="showTable()">Show Table</button>
+</div> -->
+
+<div class="slidecontainer">
+    <form [formGroup]="form">
+        <input type="range" min="0" max="5" class="slider" formControlName="sliderName" (change)="onChange($event)">
+        <h4>Fuzziness: {{ form.get('sliderName')?.value }}</h4>
+       
+    </form>
+</div>
+
